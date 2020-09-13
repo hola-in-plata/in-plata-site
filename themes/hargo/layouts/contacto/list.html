@@ -1,0 +1,50 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+{{ if site.Data.contact.contact.enable }}
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6">
+        {{ with site.Data.contact.contact.office }}
+        <h3 class="mb-4">Contactanos</h3>
+        <p>{{ .content | markdownify }}</p>
+        {{ end }}
+
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-color" href="tel:{{ site.Params.mobile }}"><i
+                class="ti-mobile text-primary mr-2"></i>
+             {{ site.Params.mobile }}</a></li>
+          <li class="mb-3"><a class="text-color" href="mailto:{{ site.Params.email }}"><i
+                class="ti-email text-primary mr-2"></i>{{ site.Params.email }}</a></li>
+          <li class="mb-3"><i class="ti-location-pin text-primary mr-2"></i>{{ site.Params.location }}
+            {{ range site.Params.social }}
+            <li class="mb-3"><a class="text-color" href="{{ .link | safeURL }}"><i class="{{ .icon }} text-primary"></i>&nbsp;in.plata</a></li>
+            {{ end }}
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-4">
+       
+        <form class="gform" action="{{ site.Params.contact.formAction }}" method="POST">
+          <input type="hidden" name="data-email" value="{{ site.Params.email }}">Nombre:
+          <input type="text" class="form-control mb-2" id="name" name="name">Tu email:
+          <input type="email" class="form-control mb-2" id="email" name="email">Mensaje:
+          <textarea name="message" id="message" class="form-control mb-2"></textarea>
+          <button type="submit" value="send" class="btn btn-block btn-outline-primary rounded">Enviar</button>
+          <div style="display:none" class="thankyou_message">
+            <!-- You can customize the thankyou message by editing the code below -->
+            <h4 class="mb-4">Muchas gracias, responderemos tu mensaje a la brevedad!</h4>
+           </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+{{ end }}

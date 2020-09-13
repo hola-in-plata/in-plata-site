@@ -1,0 +1,83 @@
+<style type="text/css">
+  header { background: #C5BEBE !important; }
+  .navbar {
+    padding-top: 0px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+ 
+  .logostyle {
+    text-align: center; 
+    padding-top: 5px; 
+    padding-bottom: 0px;
+    position: relative;
+    z-index: 10000;
+  }
+  .form-control { 
+    border: 1px solid #C5BEBE;
+  }
+
+  .btn-outline-primary {
+    background: #C5BEBE;
+    border-color: #C5BEBE;
+  }
+
+  .text-primary {
+    color: #000000 !important;
+  }
+
+  ::selection {
+    background: #C5BEBE;
+    color: #fff;
+  }
+</style>
+
+
+{{ "<!-- navigation -->" | safeHTML }}
+<header class="sticky-top navigation">
+  <div class="logostyle">
+    <a class="navbar-brand" href="{{ site.BaseURL }}">
+      <img class="img-fluid" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}">
+    </a>
+  </div>
+  <img src="{{ "images/banner_overlay.png" | absURL }}" class="img-fluid overlay-image" alt="">
+  <div>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ site.BaseURL }}"><b>{{ with site.Params.Home }} {{ . }} {{ end }}</b></a>
+          </li>
+          {{ range site.Menus.main }}
+          {{ if .HasChildren }}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <b>{{ .Name }}</b>
+            </a>
+            <div class="dropdown-menu">
+              {{ range .Children }}
+              <a class="dropdown-item" href="{{ .URL | absURL }}"><b>{{ .Name }}</b></a>
+              {{ end }}
+            </div>
+          </li>
+          {{ else }}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ .URL | absURL }}"><b>{{ .Name }}</b></a>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+{{ "<!-- /navigation -->" | safeHTML }}

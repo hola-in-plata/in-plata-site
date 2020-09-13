@@ -1,0 +1,33 @@
+<style type="text/css">
+  .section-sm { 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    border-style: solid; 
+    border-color: #C5BEBE;
+    border-width: 1px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    }  
+</style>
+
+<section class="section-sm">
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent p-0">
+            <li class="breadcrumb-item"><a class="text-dark" href="{{ site.BaseURL }}">{{ site.Params.home }}</a></li>
+            {{ if ne .Page.Parent.Name .Page.Site.Title }}
+            <li class="breadcrumb-item active" aria-current="page">{{.Page.Parent.Name}}</li>
+            {{ end }}
+            <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+          </ol>
+        </nav>
+      
+      </div>
+    </div>
+  </div>
+</section>
+<br>

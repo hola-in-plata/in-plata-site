@@ -1,0 +1,48 @@
+{{ define "main" }}
+  
+{{ partial "page-title.html" . }}
+
+<style type="text/css">
+  .product-slider  .slick-list {
+    border: 1px solid #C5BEBE;
+  }
+  .product-slider .slick-dots li {
+    border: 1px solid #C5BEBE;
+  }
+</style>
+
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <!-- product image slider -->
+        <div class="product-slider">
+            {{ range $index, $image := .Params.Images }}
+            <div data-image="{{ .image | absURL }}" >
+              <img class="img-fluid w-100" src="{{ .image | absURL }}" alt="product-img" id="img-container_{{ $index }}">
+            </div>
+            {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <h4 class="font-weight-medium">{{ .Title }}</h4>
+        <div class="my-4">
+          <span class="lead text-primary font-weight-medium">{{ .Params.Price }}</span>
+        </div>
+        <h5 class="font-weight-medium">Descripción</h5>
+        <p>{{ .Params.Description | markdownify }}</p>
+        <h5 class="font-weight-medium">Materiales</h5>
+        <p>{{ .Params.Materials | markdownify }}</p>
+        <h5 class="font-weight-medium">Color</h5>
+        <p>{{ .Params.Color | markdownify }}</p>
+        <h5 class="font-weight-medium">Dimensiones</h5>
+        <p>{{ .Params.Dimensions | markdownify }}</p>
+        <h5 class="font-weight-medium">Código</h5>
+        <p>{{ .Params.Code | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}
+

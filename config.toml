@@ -1,0 +1,94 @@
+######################## default configuration ####################
+baseURL = "https://examplesite.com"
+languageCode = "en-us"
+title = "Home"
+theme = "hargo"
+summaryLength = "20"
+paginate = 10
+disqusShortname = ""
+
+############################# Plugins ##############################
+[params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  link = "plugins/bootstrap/bootstrap.min.css"
+  [[params.plugins.css]]
+  link = "plugins/slick/slick.css"
+  [[params.plugins.css]]
+  link = "plugins/themify-icons/themify-icons.css"
+  [[params.plugins.css]]
+  link = "plugins/image-zoom.css"
+
+  # JS Plugins
+  [[params.plugins.js]]
+  link = "plugins/jQuery/jquery.min.js"
+  [[params.plugins.js]]
+  link = "plugins/bootstrap/bootstrap.min.js"
+  [[params.plugins.js]]
+  link = "plugins/slick/slick.min.js"
+  [[params.plugins.js]]
+  link = "plugins/google-map/gmap.js"
+  [[params.plugins.js]]
+  link = "plugins/form_submission_handler.js"
+  [[params.plugins.js]]
+  link = "plugins/image-zoom.min.js"
+
+############################## navigation ###############################
+[menu]
+    
+  [[menu.main]]
+  name = "Aros"
+  identifier = "aros"
+  weight = 1
+
+  [[menu.main]]
+  name = "Dijes"
+  URL = "dijes"
+  weight = 2
+
+  [[menu.main]]
+  name = "Contacto"
+  URL = "contacto"
+  weight = 3
+
+  ############# footer menu #############
+  [[menu.footer]]
+  name = "Preguntas Frecuentes"
+  URL = "faq"
+  weight = 2
+  
+  [[menu.footer]]
+  name = "Contacto"
+  URL = "contacto"
+  weight = 3
+
+
+#################### default parameters ################################
+[params]
+logo = "images/logo_mediano.png"
+home = "Home"
+# Meta data
+description = "This is meta description"
+author = "Themefisher"
+banner = "images/banner_centro.png"
+
+# Contact Information
+mobile = "1158104619"
+email = "hola.in.plata@email.com"
+location = "Caballito, CABA"
+
+# Contact Form
+[params.contact]
+formAction = "https://script.google.com/macros/s/AKfycbz-XUmHB7SF2eTsaRz4mvMrfvO_uV75Z3k4zlZT/exec"
+
+  # Preloader
+  [params.preloader]
+  enable = true
+  preloader = "" # use .png , .svg or .gif format
+
+  # Social Site
+  [[params.social]]
+  icon = "ti-instagram"
+  link = "http://instagram.com/in.plata"
+
