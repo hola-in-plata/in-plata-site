@@ -4,7 +4,6 @@
   .title-container {
       text-align: center;
       margin: 20px 0;
-      float: left;
       width: 100%;
   }
   .title-container .title {
@@ -20,15 +19,15 @@
     margin: -35px 0 34px 0;
   }
 </style>
-
 <div class="title-container">
   <h2 class="title">Productos Destacados</h2>
   <hr class="title-line">
 </div>
+<br>
 <section class="section pt-0">
   <div class="container">
     <div class="row">
-      {{ range first 100 (where site.RegularPages "Type" "destacados") }}
+      {{ range first 100 (where site.RegularPages "Type" "aros") }}
       <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card border-0 text-center">
           <a href="{{ .Permalink }}">
