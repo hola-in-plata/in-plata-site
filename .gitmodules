@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github-inplata:in-plata/in-plata.github.io.git
+	branch = master
