@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "https://examplesite.com"
+baseURL = "https://in-plata.github.io/"
 languageCode = "en-us"
 title = "Home"
 theme = "hargo"
