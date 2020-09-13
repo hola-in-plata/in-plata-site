@@ -22,7 +22,7 @@ type: "destacados"
 # product Images
 # first image will be shown in the product page
 images:
-  - image: "images/aros/trepador/_9070539.jpeg"
-  - image: "images/aros/trepador/_9070540.jpeg"
+  - image: "images/aros/trepadores/9070539.jpeg"
+  - image: "images/aros/trepadores/9070540.jpeg"
 ---
 
