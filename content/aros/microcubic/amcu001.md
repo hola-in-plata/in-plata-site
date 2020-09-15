@@ -18,7 +18,7 @@ dimensions:
 code: AMCU001
 
 # type must be "aros"
-type: "aros"
+type: "Aros"
 
 # product Images
 # first image will be shown in the product page

@@ -11,14 +11,14 @@ price: "$15.00"
 
 materials: Plata 925
 
-color: Plata
+color: "Plata"
 
 dimensions:
 
 code: ACOL001
 
 # type must be "aros"
-type: "aros"
+type: "Aros"
 
 # product Images
 # first image will be shown in the product page
