@@ -1,9 +1,20 @@
 faqItem:
-  - title : Cómo puedo comprar?
-    content : Respuesta sobre cómo comprar
+  - title : Cómo comprar?
+    content : "Para comprar nuestros productos podés enviarnos un mensaje directo, un mail a hola.in.plata@gmail.com o contactarte por mensaje vía whatsapp al 1158104619.
+Nos decís qué producto te interesa, te informamos precio, si tiene descuentos vigentes, arreglamos la forma de pago que más te convenga y el envío de acuerdo a tu disponibilidad. Queremos que tu compra sea súper segura y placentera. Es maravilloso cuando todo funciona bien, no? Estamos para eso! 
+Esperamos tu contacto!"
 
-  - title : Realizan envíos?
-    content : Respuesta sobre envíos
 
-  - title : Tienen showroom?
-    content : Respuesta sobre showroom
+  - title : Entregas
+    content : "Nuestra intención es brindar un servicio súper personalizado. Así que coordinamos con vos la entrega de acuerdo a tu conveniencia. Puede ser por moto, correo o retiro en persona por nuestro local del barrio de Caballito, vos elegís! Envianos un mensaje directo, por whatsapp al 1158104619 o vía mail a hola.in.plata@gmail.com y lo coordinamos.
+Los envíos son siempre a cargo del cliente, para que haya transparencia en su costo y para que decidas si te es más conveniente retirarlo en persona o enviar a alguien de tu confianza. Consultanos y te contamos cuáles son las tarifas vigentes."
+
+  - title : Entregas express
+    content : "Si el punto de entrega es en CABA o GBA, disponemos de un servicio de entrega dentro de las 24 hs (para los que no pueden esperar o se olvidaron de algún regalo!!)
+Contanos qué producto necesitás, lo preparamos, la moto hace la entrega y abonás en efectivo con descuento!Si es para regalo, podés abonar vía transferencia bancaria y nos envías el comprobante vía mail o whatsapp. Si querés abonar en efectivo, la moto puede pasar a cobrar por dónde vos estés y luego hacer la entrega a destino (te va a salir un poco más caro pero te puede salvar de algún compromiso!!). 
+Contactanos y te ayudamos en lo que necesites."
+
+  - title: Regalos
+    content: "En el caso de que tu compra sea para regalo no dejes de avisarnos!Nos vamos a esmerar en la presentación para que quien lo reciba se sienta muy especial!!!
+Estamos para ayudarte. Comunicate por dm, a hola.in.plata@gmail.com o por whatsapp al 1158104619 y contanos qué necesitás."
+

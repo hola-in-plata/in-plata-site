@@ -48,20 +48,35 @@ disqusShortname = ""
   weight = 2
 
   [[menu.main]]
+  name = "Preguntas frecuentes"
+  URL = "faq"
+  weight = 3
+
+  [[menu.main]]
+  name = "Nosotros"
+  URL = "nosotros"
+  weight = 4
+
+  [[menu.main]]
   name = "Contacto"
   URL = "contacto"
-  weight = 3
+  weight = 5
 
   ############# footer menu #############
   [[menu.footer]]
-  name = "Preguntas Frecuentes"
+  name = "Preguntas frecuentes"
   URL = "faq"
   weight = 2
   
   [[menu.footer]]
+  name = "Nosotros"
+  URL = "nosotros"
+  weight = 3
+
+  [[menu.footer]]
   name = "Contacto"
   URL = "contacto"
-  weight = 3
+  weight = 4
 
 
 #################### default parameters ################################

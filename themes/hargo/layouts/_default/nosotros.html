@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+
+
+<section class="section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6"> 
+                <img src="{{ "images/aros/colgantes/_9090846.jpeg" | absURL }}" alt="{{ .Title }}" class="card-img-top">
+            </div>
+            <div class="col-lg-6 justify-content-between"> 
+                {{.Content}}
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{{end}}
