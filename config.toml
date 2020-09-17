@@ -36,31 +36,38 @@ disqusShortname = ""
 
 ############################## navigation ###############################
 [menu]
-    
+  
+  [[menu.main]]
+    name = "Home"
+    url = "/categories/destacados"
+    weight = 1
+
   [[menu.main]]
   name = "Aros"
   identifier = "aros"
-  weight = 1
+  weight = 2
 
   [[menu.main]]
   name = "Dijes"
   URL = "dijes"
-  weight = 2
+  weight = 3
 
   [[menu.main]]
   name = "Preguntas frecuentes"
   URL = "faq"
-  weight = 3
+  weight = 4
 
   [[menu.main]]
   name = "Nosotros"
   URL = "nosotros"
-  weight = 4
+  weight = 5
 
   [[menu.main]]
   name = "Contacto"
   URL = "contacto"
-  weight = 5
+  weight = 6
+
+
 
   ############# footer menu #############
   [[menu.footer]]

@@ -15,7 +15,8 @@ COLUMN_PRODUCT = "Producto"
 COLUMN_CATEGORY = 'Categoria'
 COLUMN_CODE = 'Codigo'
 COLUMN_IMAGE_NAME = 'Nombre Imagen'
-
+COLUMN_DESTACADO = 'Destacado'
+CATEGORY_DESTACADOS = 'destacados'
 
 def generate_and_export_files(csv_file, photo_directory, template_file, export_dir):
     reader = csv.DictReader(csv_file, delimiter=',')
@@ -33,6 +34,9 @@ def generate_md_and_images(row, photo_directory, template, export_dir):
     images = copy_images(row, photo_directory, export_dir)
     template = replace_value(
         template, "images", generate_images_section(images))
+
+    template = replace_value(template, "categories",
+                             generate_categories_section(row))
 
     export_file = generate_file_name(
         "{}/{}".format(export_dir, CONTENT_DIR), row, DEFAULT_MD_EXTENSION)
@@ -65,6 +69,11 @@ def generate_images_section(images):
 
     return "\n".join(formatted_images)
 
+def generate_categories_section(row):
+    categories = []
+    if row_value(row, COLUMN_DESTACADO) and row_value(row, COLUMN_DESTACADO).lower() == "si":
+        categories.append(CATEGORY_DESTACADOS)
+    return ",".join(categories)
 
 def write_file(filename, content):
     if not os.path.exists(os.path.dirname(filename)):

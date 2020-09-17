@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+<style type="text/css">
+  .title-container {
+      text-align: center;
+      margin: 20px 0;
+      width: 100%;
+  }
+  .title-container .title {
+      border-color: #988c80;
+      background-color: #ffffff;
+      border: 1px solid #C5BEBE;
+      padding: 15px 25px;
+      font-size: 18px;
+      font-weight: normal;
+      display: inline-block;
+  }
+  .title-line {
+    margin: -35px 0 34px 0;
+  }
+</style>
+<div class="title-container">
+  <h2 class="title">Productos Destacados</h2>
+  <hr class="title-line">
+</div>
+<br>
+<section class="section pt-0">
+  <div class="container">
+    <div class="row">
+      {{ range .Data.Pages }}
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card border-0 text-center">
+          <a href="{{ .Permalink }}">
+            {{ with .Params.Images }}
+            {{ range first 1 . }}
+            <img src="{{ .image | absURL }}" alt="{{ .Title }}" class="card-img-top">
+            {{ end }}
+            {{ end }}
+          </a>
+          <div class="card-body">
+            <a href="{{ .Permalink }}" class="h4">{{ .Title }}</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</section>
+
+{{ end }}
