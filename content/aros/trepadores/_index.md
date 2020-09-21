@@ -7,5 +7,5 @@ menu:
   main:
     identifier: 'trepadores'
     parent: 'aros'
-    weight: 40
+    weight: 50
 ---

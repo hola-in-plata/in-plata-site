@@ -8,7 +8,12 @@
   }
   .product-slider .slick-dots li {
     border: 1px solid #C5BEBE;
-  }
+    list-style-type: none;
+    margin: 1px;
+    margin-left: 1px;
+    border-radius: 1px;
+    padding: 2px;
+    cursor: pointer;
 </style>
 
 <section class="section pt-0">
@@ -39,6 +44,13 @@
         <p>{{ .Params.Dimensions | markdownify }}</p>
         <h5 class="font-weight-medium">Código</h5>
         <p>{{ .Params.Code | markdownify }}</p>
+        <h5 class="font-weight-medium">Precio</h5>
+        <p><form action="{{ "contacto" | absURL }}" method="GET">
+          <input type="hidden" name="get_price" id="get_price" value="true"></input>
+          <input type="hidden" name="code" id="code" value="{{ .Params.Code }}"></input>
+          <button type="submit" value="send" class="btn btn-outline-primary rounded">Consultar</button>
+          </form>
+        </p>
       </div>
     </div>
   </div>

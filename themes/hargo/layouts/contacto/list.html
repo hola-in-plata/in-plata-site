@@ -2,6 +2,44 @@
 
 {{ partial "page-title.html" . }}
 
+<script type="text/javascript">
+
+  function validateForm() {
+    var x = document.forms["contacto"]["email"].value;
+    if (x == "") {
+      alert("Por favor ingresá tu email, ahí te llegará nuestra respuesta");
+      document.forms["contacto"]["email"].focus();
+      return false;
+    }
+    return true;
+  }
+
+  var getParams = function (url) {
+    var params = {};
+    var parser = document.createElement('a');
+    parser.href = url;
+    var query = parser.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split('=');
+      params[pair[0]] = decodeURIComponent(pair[1]);
+    }
+    return params;
+  };
+
+  window.onload = function(){
+    params = getParams(window.location.href)
+    const get_price = params['get_price'];
+    const code = params['code'];
+    if( get_price && code) {
+      message = `Hola!\nQuisiera consultar el precio del artículo con código ${code}`;
+      message += '\nMuchas gracias';
+      document.getElementById("message").value = message;
+    }
+  }
+
+</script>
+
 {{ if site.Data.contact.contact.enable }}
 <section class="section pt-0">
   <div class="container">
@@ -28,12 +66,12 @@
       
       <div class="col-lg-4">
        
-        <form class="gform" action="{{ site.Params.contact.formAction }}" method="POST">
+        <form name="contacto" class="gform" action="{{ site.Params.contact.formAction }}" method="POST" >
           <input type="hidden" name="data-email" value="{{ site.Params.email }}">Nombre:
           <input type="text" class="form-control mb-2" id="name" name="name">Tu email:
           <input type="email" class="form-control mb-2" id="email" name="email">Mensaje:
           <textarea name="message" id="message" class="form-control mb-2"></textarea>
-          <button type="submit" value="send" class="btn btn-block btn-outline-primary rounded">Enviar</button>
+          <button type="submit" value="send" class="btn btn-block btn-outline-primary rounded" onclick="return validateForm();">Enviar</button>
           <div style="display:none" class="thankyou_message">
             <!-- You can customize the thankyou message by editing the code below -->
             <h4 class="mb-4">Muchas gracias, responderemos tu mensaje a la brevedad!</h4>

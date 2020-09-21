@@ -7,5 +7,5 @@ menu:
   main:
     identifier: 'todos'
     parent: 'aros'
-    weight: 100
+    weight: 1000
 ---

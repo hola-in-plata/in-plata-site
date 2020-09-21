@@ -4,7 +4,8 @@ import sys
 import argparse
 import csv
 import glob
-from shutil import copy2
+from shutil import copy
+
 
 DEFAULT_TEMPLATE = "./content/templates/template_producto._md"
 DEFAULT_EXPORT_DIR = "./export"
@@ -17,6 +18,7 @@ COLUMN_CODE = 'Codigo'
 COLUMN_IMAGE_NAME = 'Nombre Imagen'
 COLUMN_DESTACADO = 'Destacado'
 CATEGORY_DESTACADOS = 'destacados'
+
 
 def generate_and_export_files(csv_file, photo_directory, template_file, export_dir):
     reader = csv.DictReader(csv_file, delimiter=',')
@@ -69,11 +71,13 @@ def generate_images_section(images):
 
     return "\n".join(formatted_images)
 
+
 def generate_categories_section(row):
     categories = []
     if row_value(row, COLUMN_DESTACADO) and row_value(row, COLUMN_DESTACADO).lower() == "si":
         categories.append(CATEGORY_DESTACADOS)
     return ",".join(categories)
+
 
 def write_file(filename, content):
     if not os.path.exists(os.path.dirname(filename)):
@@ -92,11 +96,12 @@ def copy_images(row, photo_directory, export_dir):
     src_images = generate_file_name(photo_directory, row, "*", '*')
     src_files = glob.glob(src_images)
     src_files.sort()
+    target_dir = "{}/{}/{}".format(export_dir,
+                               IMAGES_DIR, generate_relative_dir(row))
+    os.makedirs(target_dir, exist_ok=True)
     for file in src_files:
-        target = "{}/{}/{}".format(export_dir,
-                                   IMAGES_DIR, generate_relative_dir(row))
-        target_image = copy2(file, target)
-        target_images.append(target_image)
+        copy(file, target_dir)
+        target_images.append(target_dir + "/" + os.path.basename(file))
 
     return target_images
 
