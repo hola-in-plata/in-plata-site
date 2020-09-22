@@ -4,7 +4,7 @@ languageCode = "en-us"
 title = "Home"
 theme = "hargo"
 summaryLength = "20"
-paginate = 10
+paginate = 12
 disqusShortname = ""
 
 ############################# Plugins ##############################
@@ -96,7 +96,7 @@ author = "Themefisher"
 banner = "images/banner_centro.png"
 
 # Contact Information
-mobile = "1158104619"
+mobile = "+5491158104619"
 email = "hola.in.plata@email.com"
 location = "Caballito, CABA"
 
