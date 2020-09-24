@@ -59,8 +59,12 @@ def generate_file_name(dir, row, extension, wildcard=''):
 
 
 def generate_relative_dir(row):
-    return "{}/{}".format(row_value(
-        row, COLUMN_PRODUCT), row_value(row, COLUMN_CATEGORY))
+    product = row_value(row, COLUMN_PRODUCT)
+    category = row_value(row, COLUMN_CATEGORY)
+    category = category.replace(product + ".", "") # remove producto from category hierarchy
+    category = category.replace(" ", "_") # spaces on dir name generates problems 
+    categories = category.split(".")
+    return "{}/{}".format(product, "/".join(categories))
 
 
 def generate_images_section(images):
@@ -97,7 +101,7 @@ def copy_images(row, photo_directory, export_dir):
     src_files = glob.glob(src_images)
     src_files.sort()
     target_dir = "{}/{}/{}".format(export_dir,
-                               IMAGES_DIR, generate_relative_dir(row))
+                                   IMAGES_DIR, generate_relative_dir(row))
     os.makedirs(target_dir, exist_ok=True)
     for file in src_files:
         copy(file, target_dir)
