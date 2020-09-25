@@ -49,12 +49,12 @@ disqusShortname = ""
 
   [[menu.main]]
   name = "Dijes"
-  URL = "dijes"
+  identifier = "dijes"
   weight = 3
   
   [[menu.main]]
-  name = "Collares"
-  URL = "collares"
+  name = "Colgantes"
+  URL = "colgantes"
   weight = 4
   
   [[menu.main]]
