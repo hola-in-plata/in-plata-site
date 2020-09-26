@@ -6,5 +6,5 @@ menu:
   main:
     identifier: 'Strass'
     parent: 'aros'
-    weight: 100
+    weight: 99
 ---
