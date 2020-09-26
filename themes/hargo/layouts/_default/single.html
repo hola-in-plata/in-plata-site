@@ -22,9 +22,15 @@
       <div class="col-lg-5 mb-4 mb-lg-0">
         <!-- product image slider -->
         <div class="product-slider">
+            {{ $.Scratch.Set "counter" 0 }} 
             {{ range $index, $image := .Params.Images }}
             <div data-image="{{ .image | absURL }}" >
               <img class="img-fluid w-100" src="{{ .image | absURL }}" alt="product-img" id="img-container_{{ $index }}">
+            </div>
+            {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+            {{ end }}
+            {{ if eq ($.Scratch.Get "counter") 1 }}
+            <div data-image="{{ "/images/no_image.png"| absURL }}" >
             </div>
             {{ end }}
         </div>

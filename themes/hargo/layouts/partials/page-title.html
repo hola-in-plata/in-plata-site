@@ -19,8 +19,13 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent p-0">
             <li class="breadcrumb-item"><a class="text-dark" href="{{ site.BaseURL }}">{{ site.Params.home }}</a></li>
+            {{ if ne .Page.Parent.Parent nil }}
+            {{ if ne .Page.Parent.Parent.Name site.Params.home }}
+            <li class="breadcrumb-item"><a class="text-dark" href="{{ .Page.Parent.Parent.Permalink }}">{{.Page.Parent.Parent.Name}}</a></li>
+            {{ end }}
+            {{ end }}
             {{ if ne .Page.Parent.Name .Page.Site.Title }}
-            <li class="breadcrumb-item active" aria-current="page">{{.Page.Parent.Name}}</li>
+            <li class="breadcrumb-item"><a class="text-dark" href="{{ .Page.Parent.Permalink }}">{{.Page.Parent.Name}}</a></li>
             {{ end }}
             <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
           </ol>
