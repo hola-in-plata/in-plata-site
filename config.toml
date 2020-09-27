@@ -122,5 +122,5 @@ formAction = "https://script.google.com/macros/s/AKfycbyAXift3Wqrs3LHrNmgvrecvin
   # Social Site
   [[params.social]]
   icon = "ti-instagram"
-  link = "http://instagram.com/in.plata"
+  link = "https://instagram.com/in.plata"
 
