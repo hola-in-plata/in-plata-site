@@ -54,7 +54,7 @@ disqusShortname = ""
   
   [[menu.main]]
   name = "Colgantes"
-  URL = "colgantes"
+  identifier = "colgantes"
   weight = 4
   
   [[menu.main]]
@@ -62,20 +62,25 @@ disqusShortname = ""
   URL = "pulseras"
   weight = 5
 
+ [[menu.main]]
+  name = "Conjuntos"
+  URL = "conjuntos"
+  weight = 6
+
   [[menu.main]]
   name = "Preguntas frecuentes"
   URL = "faq"
-  weight = 6
+  weight = 8
 
   [[menu.main]]
   name = "Nosotros"
   URL = "nosotros"
-  weight = 7
+  weight = 9
 
   [[menu.main]]
   name = "Contacto"
   URL = "contacto"
-  weight = 8
+  weight = 10
 
 
 
