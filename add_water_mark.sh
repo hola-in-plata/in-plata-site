@@ -7,10 +7,18 @@ if [ $# -lt 1 ]
 fi
 
 path=$1
+outdir=watermark
+color=LightSlateGrey
+#color=grey
+pointsize=40
 
-for i in $(ls $path) 
+cd $path
+
+mkdir -p $outdir
+
+for i in $(ls *.*) 
 do 
   code=in.plata-$(echo $i | sed "s/\([[:digit:]]\{2\}-\)\([[:digit:]]\{2\}-\)\([[:digit:]]\{4\}\)\(-.*\)/\1\2\3/g")
-  convert $path/$i -gravity South -pointsize 20 -fill grey -annotate +300+10 $code $path/out/$i 
+  convert $i -gravity South -pointsize $pointsize -fill $color -annotate +200+10 $code ../$i 
 done
 
