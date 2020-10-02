@@ -4,7 +4,7 @@ draft: false
 description : "Cristal Swarovski"
 menu:
   main:
-    identifier: 'Cristal Swarovski'
+    identifier: 'cristal_swarovski'
     parent: 'aros'
-    weight: 60
+    weight: 59
 ---

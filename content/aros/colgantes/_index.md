@@ -1,10 +1,10 @@
 ---
 title: "Colgantes"
 draft: false
-description : "Colgantes"
+description : "Colgante"
 menu:
   main:
-    identifier: 'colgantes'
+    identifier: 'colgante'
     parent: 'aros'
-    weight: 30
+    weight: 2
 ---
