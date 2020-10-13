@@ -10,7 +10,7 @@ path=$1
 outdir=watermark
 #color=LightSlateGrey
 color=grey
-pointsize=40
+pointsize=30
 
 cd $path
 

@@ -59,7 +59,7 @@ disqusShortname = ""
   
   [[menu.main]]
   name = "Pulseras"
-  URL = "pulseras"
+  identifier = "pulseras"
   weight = 5
 
  [[menu.main]]
