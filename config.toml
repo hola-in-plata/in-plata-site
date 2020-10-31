@@ -62,10 +62,15 @@ disqusShortname = ""
   identifier = "pulseras"
   weight = 5
 
+[[menu.main]]
+  name = "Anillos"
+  URL = "anillos"
+  weight = 6
+
  [[menu.main]]
   name = "Conjuntos"
   URL = "conjuntos"
-  weight = 6
+  weight = 7
 
   [[menu.main]]
   name = "Preguntas frecuentes"
