@@ -39,6 +39,11 @@
         <h4 class="font-weight-medium">{{ .Title }}</h4>
         <div class="my-4">
           <span class="lead text-primary font-weight-medium">{{ .Params.Price }}</span>
+          {{ if not (eq .Params.Type "Promos")}}
+          <p>
+          <span class="font-weight-small">10% de descuento pagando en efectivo/transferencia</span>
+          </p>
+          {{ end }}
         </div>
         <h5 class="font-weight-medium">Descripción</h5>
         <p>{{ .Params.Description | markdownify }}</p>
@@ -50,13 +55,6 @@
         <p>{{ .Params.Dimensions | markdownify }}</p>
         <h5 class="font-weight-medium">Código</h5>
         <p>{{ .Params.Code | markdownify }}</p>
-        <h5 class="font-weight-medium">Precio</h5>
-        <p><form action="{{ "contacto" | absURL }}" method="GET">
-          <input type="hidden" name="get_price" id="get_price" value="true"></input>
-          <input type="hidden" name="code" id="code" value="{{ .Params.Code }}"></input>
-          <button type="submit" value="send" class="btn btn-outline-primary rounded">Consultar</button>
-          </form>
-        </p>
       </div>
     </div>
   </div>

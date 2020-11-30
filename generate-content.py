@@ -17,6 +17,7 @@ COLUMN_CATEGORY = 'Categoria'
 COLUMN_CODE = 'Codigo'
 COLUMN_IMAGE_NAME = 'Nombre Imagen'
 COLUMN_DESTACADO = 'Destacado'
+COLUMN_STOCK = 'Stock'
 CATEGORY_DESTACADOS = 'destacados'
 
 
@@ -42,7 +43,12 @@ def generate_md_and_images(row, photo_directory, template, export_dir):
 
     export_file = generate_file_name(
         "{}/{}".format(export_dir, CONTENT_DIR), row, DEFAULT_MD_EXTENSION)
-    write_file(export_file, template)
+
+    stock = row_value(row, COLUMN_STOCK)
+    if stock and int(stock) <= 0:
+        delete_file(export_file)
+    else:
+        write_file(export_file, template)
 
 
 def replace_value(template, var, value):
@@ -94,6 +100,12 @@ def write_file(filename, content):
     with open(filename, "w") as f:
         f.write(content)
 
+def delete_file(filename):
+    if os.path.exists(os.path.dirname(filename)):
+        try:
+            os.remove(filename)
+        except:
+             ''' nothing '''
 
 def copy_images(row, photo_directory, export_dir):
     target_images = []
