@@ -28,7 +28,7 @@ else
   git diff --color-words -U0 --src-prefix=Ficha: *.md | grep -v @@ | grep -v index | grep -v diff | grep -v -e "+++ b" | aha > $catalog_export_dir/index.html
   ./deploy.sh > /tmp/deploy.out 2>&1 
 
-  git add
+  git add .
   git commit -m "Changes"
   git push origin master
 fi
