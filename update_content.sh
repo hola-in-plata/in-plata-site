@@ -7,7 +7,7 @@ if [ $# -lt 1 ]
 fi
 
 credentials=$1
-photos_dir="/Users/marianadabreu/Documents/in.plata/fotos" 
+photos_dir="$HOME/in.plata/fotos" 
 catalog_spreadsheet="Catalogo"
 catalog_sheet_index=0
 catalog_export_dir="/tmp"
