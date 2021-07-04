@@ -38,4 +38,4 @@ else
   git push origin master
 fi
 
-
+cat $catalog_export_dir/index.html
