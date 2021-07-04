@@ -27,6 +27,8 @@ then
   echo 'No se detectaron cambios, no se actualizó el sitio'
 else
   # Guardar los cambios en los sources para mostrar en el resultado
+  echo "Archivos modificados"
+  echo ""
   git diff --color-words -U0 --src-prefix=Ficha: *.md | grep -v @@ | grep -v index | grep -v diff | grep -v -e "+++ b"
 
   # Rebuildear y deployar los cambios en el site
