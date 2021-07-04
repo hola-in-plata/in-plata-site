@@ -29,7 +29,7 @@ echo "<pre>"
 
 if [ $diff -eq 0 ] 
 then
-  echo 'No hay datos modificados, no se realizó ninguna actualización' > $catalog_export_dir/index.html
+  echo 'No se detectaron cambios, no se actualiz&oacute; el sitio' > $catalog_export_dir/index.html
 else
   # Guardar los cambios en los sources para mostrar en el resultado
   git diff --color-words -U0 --src-prefix=Ficha: *.md | grep -v @@ | grep -v index | grep -v diff | grep -v -e "+++ b" > $catalog_export_dir/index.html
@@ -38,9 +38,8 @@ else
   ./deploy.sh > /tmp/deploy.out 2>&1 
 
   # Guardar los cambios en los sources
-  git add .
-  git commit -m "Changes"
-  git push origin master
+  git commit -am "Changes done by update_content script" 2>&1
+  git push origin master 2>&1
 fi
 
 cat $catalog_export_dir/index.html
