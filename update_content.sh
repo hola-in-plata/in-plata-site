@@ -35,7 +35,7 @@ else
   git diff --color-words -U0 --src-prefix=Ficha: *.md | grep -v @@ | grep -v index | grep -v diff | grep -v -e "+++ b"
 
   # Rebuildear y deployar los cambios en el site
-  ./deploy.sh > /tmp/deploy.out 
+  ./deploy.sh > /tmp/deploy.out 2>&1
 
   # Guardar los cambios en los sources
   git commit -am "Changes done by update_content script" > /tmp/commit.out 2>&1
