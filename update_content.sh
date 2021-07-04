@@ -30,7 +30,7 @@ else
   git diff --color-words -U0 --src-prefix=Ficha: *.md | grep -v @@ | grep -v index | grep -v diff | grep -v -e "+++ b" | aha > $catalog_export_dir/index.html
 
   # Rebuildear y deployar los cambios en el site
-  #./deploy.sh > /tmp/deploy.out 2>&1 
+  ./deploy.sh > /tmp/deploy.out 2>&1 
 
   # Guardar los cambios en los sources
   git add .
