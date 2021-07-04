@@ -26,9 +26,13 @@ if [ $diff -eq 0 ]
 then
   echo 'No hay datos modificados, no se realizó ninguna actualización' | aha > $catalog_export_dir/index.html
 else
+  # Guardar los cambios en los sources para mostrar en el resultado
   git diff --color-words -U0 --src-prefix=Ficha: *.md | grep -v @@ | grep -v index | grep -v diff | grep -v -e "+++ b" | aha > $catalog_export_dir/index.html
-  ./deploy.sh > /tmp/deploy.out 2>&1 
 
+  # Rebuildear y deployar los cambios en el site
+  #./deploy.sh > /tmp/deploy.out 2>&1 
+
+  # Guardar los cambios en los sources
   git add .
   git commit -m "Changes"
   git push origin master
