@@ -22,14 +22,9 @@ python3 generate_content.py  $catalog_exported_file $photos_dir -e .
 
 diff=`git diff *.md | wc -l`
 
-echo "<html>"
-echo "<meta http-equiv="Pragma" content="no-cache">"
-echo "<meta http-equiv="Expires" content="-1">"
-echo "<pre>"
-
 if [ $diff -eq 0 ] 
 then
-  echo 'No se detectaron cambios, no se actualiz&oacute; el sitio'
+  echo 'No se detectaron cambios, no se actualizó el sitio'
 else
   # Guardar los cambios en los sources para mostrar en el resultado
   git diff --color-words -U0 --src-prefix=Ficha: *.md | grep -v @@ | grep -v index | grep -v diff | grep -v -e "+++ b"
@@ -42,5 +37,3 @@ else
   git push origin master > /tmp/push.out 2>&1
 fi
 
-echo "</pre>"
-echo "</html>"
