@@ -20,7 +20,7 @@ python3 download_spreadsheet.py $credentials $catalog_spreadsheet $catalog_sheet
 # generar contenido del sitio
 python3 generate_content.py  $catalog_exported_file $photos_dir -e .
 
-diff=`git diff *.md | wc -l`
+diff=`git status | grep .md | wc -l`
 
 if [ $diff -eq 0 ] 
 then
