@@ -35,7 +35,8 @@ else
   ./deploy.sh > /tmp/deploy.out 2>&1
 
   # Guardar los cambios en los sources
-  git commit -am "Changes done by update_content script" > /tmp/commit.out 2>&1
+  git add *.md public > /tmp/add.out 2>&1
+  git commit -m "Changes done by update_content script" > /tmp/commit.out 2>&1
   git push origin master > /tmp/push.out 2>&1
 fi
 
