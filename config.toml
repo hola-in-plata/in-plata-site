@@ -67,10 +67,6 @@ disqusShortname = ""
   URL = "anillos"
   weight = 6
 
- [[menu.main]]
-  name = "Conjuntos"
-  URL = "conjuntos"
-  weight = 7
 
  [[menu.main]]
   name = "Promos"
