@@ -115,9 +115,14 @@ def copy_images(row, photo_directory, export_dir):
     target_dir = "{}/{}/{}".format(export_dir,
                                    IMAGES_DIR, generate_relative_dir(row))
     os.makedirs(target_dir, exist_ok=True)
+    print(row[COLUMN_CODE] + ", \"", end = "")
+    separator=""
     for file in src_files:
         copy(file, target_dir)
         target_images.append(target_dir + "/" + os.path.basename(file))
+        print(separator + "https://inplata.com/images/" + generate_relative_dir(row) + "/" + os.path.basename(file), end = '')
+        separator=","
+    print("\"")
     return target_images
 
 
