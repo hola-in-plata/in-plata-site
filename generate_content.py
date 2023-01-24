@@ -52,6 +52,8 @@ def generate_md_and_images(row, photo_directory, template, export_dir):
 
 
 def replace_value(template, var, value):
+    if var.lower() == "descripcion":
+        value = value.replace('"','\\"')
     return template.replace("{{" + var.lower() + "}}", value)
 
 

@@ -73,24 +73,29 @@ disqusShortname = ""
   weight = 7
 
  [[menu.main]]
+  name = "Tobilleras"
+  URL = "tobilleras"
+  weight = 8
+
+ [[menu.main]]
   name = "Promos"
   URL = "promos"
-  weight = 8
+  weight = 9
 
   [[menu.main]]
   name = "Preguntas frecuentes"
   URL = "faq"
-  weight = 9
+  weight = 10
 
   [[menu.main]]
   name = "Nosotros"
   URL = "nosotros"
-  weight = 10
+  weight = 11
 
   [[menu.main]]
   name = "Contacto"
   URL = "contacto"
-  weight = 11
+  weight = 12
 
 
 
