@@ -47,14 +47,19 @@
         </div>
         <h5 class="font-weight-medium">Descripción</h5>
         <p>{{ .Params.Description | markdownify }}</p>
+        <h5 class="font-weight-medium">Dimensiones</h5>
+        <p>{{ .Params.Dimensions | markdownify }}</p>
+        {{ if not (eq .Params.Link_Mercado_Shop "undef")}}
+        <a href={{ .Params.Link_Mercado_Shop}} class="btn btn-block btn-outline-primary rounded">Comprar</a>
+        {{ end }}
+        <hr class="tittle-line"/>
         <h5 class="font-weight-medium">Materiales</h5>
         <p>{{ .Params.Materials | markdownify }}</p>
         <h5 class="font-weight-medium">Color</h5>
         <p>{{ .Params.Color | markdownify }}</p>
-        <h5 class="font-weight-medium">Dimensiones</h5>
-        <p>{{ .Params.Dimensions | markdownify }}</p>
         <h5 class="font-weight-medium">Código</h5>
         <p>{{ .Params.Code | markdownify }}</p>
+        <hr class="tittle-line"/>
       </div>
     </div>
   </div>

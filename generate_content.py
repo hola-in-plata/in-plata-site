@@ -54,6 +54,8 @@ def generate_md_and_images(row, photo_directory, template, export_dir):
 def replace_value(template, var, value):
     if var.lower() == "descripcion":
         value = value.replace('"','\\"')
+    if var.lower() == "link_mercado_shop" and value == "":
+        value = "undef"
     return template.replace("{{" + var.lower() + "}}", value)
 
 
@@ -124,6 +126,11 @@ def copy_images(row, photo_directory, export_dir):
         target_images.append(target_dir + "/" + os.path.basename(file))
         print(separator + "https://inplata.com/images/" + generate_relative_dir(row) + "/" + os.path.basename(file), end = '')
         separator=","
+    # print fixed images
+    print(separator + "https://inplata.com/images/general/1.jpg", end = '')
+    print(",https://inplata.com/images/general/2.jpg", end = '' )
+    print(",https://inplata.com/images/general/3.jpg", end = '' )
+    print(",https://inplata.com/images/general/4.jpg", end = '' )
     print("\"")
     return target_images
 
