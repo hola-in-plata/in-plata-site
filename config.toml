@@ -7,6 +7,9 @@ summaryLength = "20"
 paginate = 12
 disqusShortname = ""
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 ############################# Plugins ##############################
 [params.plugins]
 
@@ -96,8 +99,6 @@ disqusShortname = ""
   name = "Contacto"
   URL = "contacto"
   weight = 12
-
-
 
   ############# footer menu #############
   [[menu.footer]]
