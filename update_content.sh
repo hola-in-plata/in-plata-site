@@ -6,6 +6,7 @@ if [ $# -lt 1 ]
     exit 1
 fi
 
+
 credentials=$1
 photos_dir="$HOME/in.plata/fotos" 
 catalog_spreadsheet="Catalogo"
